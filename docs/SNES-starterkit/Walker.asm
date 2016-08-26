@@ -1,7 +1,7 @@
 ;------------------------------------------------------------------------
 ;-  Written by: Neviksti
 ;-     This was coded as an example for Darrok (from the zsnes message
-;-     boards) who was interested in learning more about the SNES 
+;-     boards) who was interested in learning more about the SNES
 ;-     hardware and language.
 ;-
 ;-     If you use my code, please share your creations with me
@@ -39,7 +39,7 @@ Main:
 	rep #$10		;A/mem = 8bit, X/Y=16bit
 	sep #$20
 
-      
+
 	;Load palette to make our pictures look correct
 	LoadPalette	BG_Palette
 
@@ -60,7 +60,7 @@ Next_tile:
 	STA $2119
 	DEX
 	BNE Next_tile
-	
+
 	JSR SpriteInit	;setup the sprite buffer
 	JSR JoyInit		;setup joypads and enable NMI
 
@@ -72,7 +72,7 @@ Next_tile:
 
 	;setup our walking sprite
 	;put him in the center of the screen
-	lda #($80-16) 		
+	lda #($80-16)
 	sta SpriteBuf1+sx
 	lda #(224/2-16)
 	sta SpriteBuf1+sy
@@ -82,11 +82,11 @@ Next_tile:
 	sta SpriteBuf2
 
 	;set the sprite to the highest priority
-	lda #$30			
+	lda #$30
 	sta SpriteBuf1+spriority
 
 	;setup the video modes and such, then turn on the screen
-	JSR SetupVideo	
+	JSR SetupVideo
 
 InfiniteLoop:
 
@@ -185,19 +185,19 @@ IncrementFrame:
 	adc	#$04
 	and	#$0C
 	adc	FrameWait
-	sta	CurrentFrame	
+	sta	CurrentFrame
 
 	stz	FrameWait
 	bra	_done
 
 _done:
 
-	
+
 	JMP InfiniteLoop	;Do this forever
 
 ;==========================================================================================
 
-.DEFINE FrameNum $12		
+.DEFINE FrameNum $12
 
 VBlank:
 	rep #$30		;A/Mem=16bits, X/Y=16bits
@@ -260,14 +260,14 @@ VBlank:
 	lda $4210		;clear NMI Flag
 
 	REP #$30		;A/Mem=16bits, X/Y=16bits
-	
+
 	inc FrameNum
 
-	PLD 
-	PLY 
-	PLX 
-	PLA 
-	PLB 
+	PLD
+	PLY
+	PLX
+	PLA
+	PLB
       RTI
 
 ;End of demo Main code
@@ -284,12 +284,12 @@ SetupVideo:
 
 	rep #$10		;A/mem = 8bit, X/Y=16bit
 	sep #$20
-      
+
 	lda #$A3		;Sprites 32x32 or 64x64, character data at $6000 (word address)
-      sta $2101         
+      sta $2101
 
 	lda #$04		;Set video mode 4, 8x8 tiles (256 color BG1, 4 color BG2)
-      sta $2105         
+      sta $2105
 
 	lda #$03		;Set BG1's Tile Map VRAM offset to $0000 (word address)
       sta $2107		;   and the Tile Map size to 64 tiles x 64 tiles
@@ -304,12 +304,12 @@ SetupVideo:
       sta $212C
 
       lda #$0F		;Turn on screen, full brightness
-      sta $2100		
+      sta $2100
 
 	lda #$FF		;Scroll BG2 down 1 pixel
 	sta $2110
-	sta $2110         
-
+	sta $2110
+ 
 	plp
 	rts
 

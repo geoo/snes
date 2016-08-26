@@ -1,0 +1,40 @@
+{
+  "name": "language-assembler-snes",
+  "version": "0.2.0",
+  "description": "Assembler language for 65816/SNES assembler support in Atom",
+  "homepage": "https://github.com/BouKiCHi/language-assembler-pasmo",
+  "keywords": [
+    "65816",
+    "SNES",
+    "assembler"
+  ],
+  "activationCommands": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "readme": "# Assembler language support in Atom\n\nthe package enables syntax-coloring to assembler code like pasmo which is a z80 assembler.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": ""
+  },
+  "_id": "language-assembler-snes@0.2.0",
+  "_shasum": "85acab56190fab60a8477c9656e737ad000461df",
+  "_resolved": "file:../d-116726-9783-tzt0tk/package.tgz",
+  "_from": "../d-116726-9783-tzt0tk/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
