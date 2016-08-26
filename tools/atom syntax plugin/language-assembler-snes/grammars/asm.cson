@@ -58,7 +58,7 @@
        'name': 'keyword.control.statement.asm'
       }
       {
-          'match': '\\s(?i:(LDA|STA|STX|LDX|BNE|DEX|cmp|beq|and|bra|inx|clc|stz|phb|pha|phx|phy|phd|adc|inc|LDY|STY|JSR|PLD|PLY|PLX|PLA|PLB|php|rep|sep|RTI|rts|plp))\\s'
+          'match': '\\s(?i:(LDA|STA|STX|LDX|BNE|DEX|cmp|beq|and|bra|inx|clc|stz|phb|pha|phx|phy|phd|adc|inc|LDY|STY|JSR|PLD|PLY|PLX|PLA|PLB|php|rep|sep|RTI|rts|plp|phk|bpl|cli|bit|dec|xce|sei|cpx|tya|blt|txa|ldx.w|sbc|sec|txa|asl))\\s'
           'name': 'keyword.control.statement.asm'
       }
       {
